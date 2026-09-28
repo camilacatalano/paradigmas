@@ -1,0 +1,34 @@
+=== 1) Cadastrando produtos ===
+  [0] Caderno | Preço: R$ 15,90 | Quantidade: 20
+  [1] Caneta | Preço: R$ 3,50 | Quantidade: 100
+  [2] Iogurte | Preço: R$ 6,00 | Quantidade: 30 | Vence em: 10 dia(s)
+  [3] Leite | Preço: R$ 5,00 | Quantidade: 40 | Vence em: 2 dia(s)
+
+=== 2) Tentando cadastrar produto com quantidade negativa ===
+Capturada QuantidadeInvalidaException: Quantidade inválida para o produto 'Borracha': -5
+
+=== 3) Venda válida ===
+Venda de 5 unidades do índice 0 realizada com sucesso.
+  Caderno | Preço: R$ 15,90 | Quantidade: 15
+
+=== 4) Venda acima do estoque disponível ===
+Capturada ProdutoIndisponivelException: Estoque insuficiente para 'Caneta': pedido = 500, disponível = 100
+
+=== 5) Sobrecarga de aplicarDesconto() ===
+Antes:  Caneta | Preço: R$ 3,50 | Quantidade: 100
+Após aplicarDesconto(10):      Caneta | Preço: R$ 3,15 | Quantidade: 100
+Após aplicarDesconto(30, 20):  Caneta | Preço: R$ 2,52 | Quantidade: 100
+
+=== 6) Valor total do estoque ===
+  [0] Caderno | Preço: R$ 15,90 | Quantidade: 15
+  [1] Caneta | Preço: R$ 2,52 | Quantidade: 100
+  [2] Iogurte | Preço: R$ 6,00 | Quantidade: 30 | Vence em: 10 dia(s)
+  [3] Leite | Preço: R$ 5,00 | Quantidade: 40 | Vence em: 2 dia(s)
+  Caderno -> R$ 238,50
+  Caneta -> R$ 252,00
+  Iogurte -> R$ 180,00
+  Leite -> R$ 160,00
+VALOR TOTAL DO ESTOQUE: R$ 830,50
+
+=== 7) Ordem dos catches (específicas -> genérica) ===
+Capturada ProdutoIndisponivelException: Não existe produto no índice 99
